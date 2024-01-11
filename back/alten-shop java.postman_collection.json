@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "11b033ad-32ef-4eaf-99ac-8630b17bdf03",
+		"name": "alten-shop java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4809756",
+		"_collection_link": "https://martian-flare-604054.postman.co/workspace/My-Workspace~2e41e23f-86cc-438c-82bc-0e743bc496fa/collection/4809756-11b033ad-32ef-4eaf-99ac-8630b17bdf03?action=share&source=collection_link&creator=4809756"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "All users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/users"
+					},
+					"response": []
+				},
+				{
+					"name": "One user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "One user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"hello\",\n    \"last_name\": \"world\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "One user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Hello\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "One user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/users/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "All products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products"
+					},
+					"response": []
+				},
+				{
+					"name": "One product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "One product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"f230fh0g3\",\n    \"name\": \"Bamboo Watch\",\n    \"description\": \"Product Description\",\n    \"image\": \"bamboo-watch.jpg\",\n    \"price\": 65,\n    \"category\": \"Accessories\",\n    \"quantity\": 24,\n    \"inventoryStatus\": \"INSTOCK\",\n    \"rating\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "One product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bamboo Watch update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "One product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/products/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

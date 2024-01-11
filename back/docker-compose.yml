@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  database:
+    container_name: database
+    restart: on-failure:5
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: alten_shop
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./src/main/resources:/docker-entrypoint-initdb.d
+      - database-data:/var/lib/db
+
+  api:
+    container_name: api
+    restart: on-failure:5
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/alten_shop?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+    volumes:
+      - ./api:/usr/src/app
+
+volumes:
+  database-data:
