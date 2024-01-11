@@ -74,4 +74,4 @@ La table `users` est également présente dans la base de données mais celle-ci
 | first_name   | Prénom de l'utilisateur   | ✅     |
 | last_name    | Nom de l'utilisateur      | ✅     |
 
-Ces tables sont définies dans le fichier SQL `init.sql` qy-ui se trouve dans `back/src/main/resources`.
+Ces tables sont définies dans le fichier SQL `init.sql` qui se trouve dans `back/src/main/resources`.
